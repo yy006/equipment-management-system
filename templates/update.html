@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h2>編集</h2>
+<div class="form">
+    <form action="/update/{{ post.id }}" method='POST'>
+        <label for="id">ID</label>
+        <input type="number" name="id" value="{{post.id}}">
+        <label for="object">物品種別・物品名称・型番・スペック</label>
+        <input type="text" name="object" value="{{post.object}}">
+        <label for="acquisition_date">取得年月日</label>
+        <input type="date" name="acquisition_date" value="{{post.acquisition_date.date()}}" required>
+        <label for="username">利用者</label>
+        <input type="text" name="username" value="{{post.username}}">
+        <label for="place">設置・保管場所</label>
+        <input type="text" name="place" value="{{post.place}}">
+        <label for="university_item_number">大学物品番号</label>
+        <input type="number" name="university_item_number1" value="{{post.university_item_number}}">
+        <label for="hyphen">-</label>
+        <input type="number" name="university_item_number2" value="{{post.university_item_number}}">
+        <label for="budget">予算(財源種別)</label>
+        <input type="text" name="budget" value="{{post.budget}}">
+        <input type="submit" value="Change">
+    </form>
+</div>
+{% endblock %}

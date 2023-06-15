@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h1>追加</h1>
+<div class="form">
+    <form action="/" method="POST">
+        <label for="id">ID</label>
+        <input type="number" name="id">
+        <label for="object">物品種別・物品名称・型番・スペック</label>
+        <input type="text" name="object">
+        <label for="acquisition_date">取得年月日</label>
+        <input type="date" name="acquisition_date" required>
+        <label for="username">利用者</label>
+        <input type="text" name="username">
+        <label for="place">設置・保管場所</label>
+        <input type="text" name="place">
+        <label for="university_item_number">大学物品番号</label>
+        <input type="number" name="university_item_number1">
+        <label for="hyphen">-</label>
+        <input type="number" name="university_item_number2">
+        <label for="budget">予算(財源種別)</label>
+        <input type="text" name="budget">
+        <input type="submit" value="Create">
+    </form>
+</div>
+{% endblock %}

@@ -1,5 +1,32 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<h1>test!!!</h1>
+<h1>トップページ</h1>
+<a href="/create" role="button">追加</a>
+<table border="1">
+    <tr>
+      <th>ID</th>
+      <th>物品種別・物品名称・型番・スペック</th>
+      <th>取得年月日</th>
+      <th>利用者</th>
+      <th>設置・保管場所</th>
+      <th>大学物品番号</th>
+      <th>予算(財源種別)</th>
+    </tr>
+    {% for post in posts %}
+    <tr>
+      <td>{{post.id}}</td>
+      <td>{{post.object}}</td>
+      <td>{{post.acquisition_date}}</td>
+      <td>{{post.username}}</td>
+      <td>{{post.place}}</td>
+      <td>{{post.university_item_number}}</td>
+      <td>{{post.budget}}</td>
+      <td><a href="/delete/{{ post.id }}" role="button">Delete</a></td>
+      <td><a href="/update/{{ post.id }}" role="button">Update</a></td>
+    </tr> 
+    {% endfor %}
+  </table>
+
+
 {% endblock %}
